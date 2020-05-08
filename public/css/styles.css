@@ -1,0 +1,73 @@
+
+body{
+    color: #8D8DAA;     
+    font-size: 1.5rem;
+    text-align: center;    
+    background: linear-gradient(90deg, #8D8DAA, #DFDFE2, #F7F5F2, #F56D91); 
+    font-family: 'Cormorant Infant', serif;
+}
+
+h1{
+    color: #F56D91;
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input, .btn{    
+    border-radius: 5px;
+    border-style: solid;
+    font-size: 1.2rem;
+}
+
+input{
+    width: 25%;
+    color: hsl(240, 15%, 61%, 0.8) ;
+}
+
+.btn{
+    background-color: hsl(240, 15%, 61%) ;
+    border-color: inherit;
+    color: rgb(197, 197, 197);
+    box-shadow: 2px 2px 6px 2px rgb(197, 197, 197),
+        1px 1px 2px 1px hsl(240, 15%, 61%, 0.4);
+
+}
+
+.btn:hover{
+    background-color: rgba(247, 92, 133, 0.5);
+    border-style: solid;
+    color: #DFDFE2;
+    
+}
+
+.city{
+    margin: 20px 20px;    
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 510px 80px;
+    grid-gap: 10px;
+    padding: 20px;
+}
+
+.grid-container > div {
+    text-align: center;
+    padding: 20px 5px;
+}
+
+img{
+    width: 45%;
+    margin: 20px 20px;    
+    position: relative;
+}
+
+.footer{
+    color: rgba(103, 103, 160, 0.87);
+    position: relative;
+    padding: 2% 1%;
+    margin: 0;
+    bottom: -20rem;    
+}
