@@ -40,25 +40,39 @@ app.post("/", function(req, res){
    
     https.get(url, function(response){
         
-        response.on("data", function(data){
-            
-            const weatherData = JSON.parse(data)
-            //console.log(weatherData);
-            const temp = weatherData.main.temp;
-            const description = weatherData.weather[0].description;
-            const icon = weatherData.weather[0].icon;
-            const imageUrl = "http://openweathermap.org/img/wn/" + icon +"@2x.png";
-            
-            descriptionWeather = description;  
-            newTemp = temp + " degrees Celsius"; 
-            city = query;
+        if (response.statusCode === 200){
+            response.on("data", function(data){
+                
+                const weatherData = JSON.parse(data)
+                //console.log(weatherData);
+                const temp = weatherData.main.temp;
+                const description = weatherData.weather[0].description;
+                const icon = weatherData.weather[0].icon;
+                const imageUrl = "http://openweathermap.org/img/wn/" + icon +"@2x.png";
+                
+                descriptionWeather = description;  
+                newTemp = temp + " degrees Celsius"; 
+                city = query;
 
-            res.redirect("/");
-            
-        });
-        
+                res.redirect("/");
+                
+            });
+        }
+        else{
+            res.redirect("/failure");
+        }
     });
  
+});
+
+app.get("/failure", function(req, res){
+
+    res.render('failure');
+});
+
+app.post("/failure", function(req, res){
+
+    res.redirect("/");
 });
 
 app.listen(3000, function(){
