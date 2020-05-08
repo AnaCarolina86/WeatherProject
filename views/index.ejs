@@ -14,38 +14,40 @@
 
 </head>
 <body>
-    <div class="grid-container">
-        <div class="grid-item">
-            <h1 class="title"> The Weather Today</h1>
-            <p> <%= today %> </p>
+    <header class="top">
+        
+        <h1 class="title"> The Weather Today</h1>
+        <h2> <%= today %> </h2>
+        
+    </header> 
 
-            <form class="city" action="/" method="POST">
-                <label for="cityInput">City Name: </label>
-                <input id="cityInput" name="cityName" type="text" placeholder="Paris"> <!--the name here is super important-->
-                <button type="submit" class="btn" >Go</button>
-            </form> 
+    <section class="query">
 
-            <div class="description">
-                <p><%= userCity %> </p>
-                <p><%= newDescription %>  </p>
-            </div>
+        <form class="city" action="/" method="POST">
+            <label for="cityInput"><h3>City Name: </h3></label>
+            <input id="cityInput" name="cityName" type="text" placeholder="Paris" autocomplete="off"> <!--the name here is super important-->
+            <button type="submit" class="btn" >Go</button>
+        </form> 
 
-            <div class="temperature">
-                <p> <%= newTemperature  %>  </p>
-            </div>
-
-            <div class="image">
-                <img src="images/undraw_through_the_park_lxnl.svg" alt="woman walking in the park">
-            </div>
+        <div class="description">
+            <p><%= userCity %> </p>
+            <p><%= newDescription %>  </p>
         </div>
 
-        <footer class="grid-item footer">
-            
-            <p>Developed by Ana Carolina Mendes. 2020 </p>
-           
-        </footer>
-    </div>
-    
+        <div class="temperature">
+            <p> <%= newTemperature  %>  </p>
+        </div>
+        
+    </section>
 
+    <footer class="footer">
+            
+    <div class="image">
+        <img src="images/undraw_through_the_park_lxnl.svg" alt="woman walking in the park">
+    </div>
+    <p>Developed by Ana Carolina Mendes. 2020 </p>
+           
+    </footer>   
+    
 </body>
 </html>
