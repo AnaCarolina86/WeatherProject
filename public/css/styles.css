@@ -28,7 +28,7 @@ h1{
 }
 
 img{
-    width: 35%;
+    width: 20%;
     margin: 0;    
     position: relative;
 }
@@ -65,7 +65,8 @@ input{
 }
 
 .footer{
-    color: #F7F5F2;
+    color: rgba(245, 135, 164, 0.5);
+    font-size: 1.25rem;
     background: hsl(240, 15%, 61%, 0.3);
     position: relative;
     float: bottom;
