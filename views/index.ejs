@@ -12,42 +12,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Cormorant+Infant:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 <body>
-    <header class="top">
-        
-        <h1 class="title"> The Weather Today</h1>
-        <h2> <%= today %> </h2>
-        
-    </header> 
+    <div class="all-elements">
+    
+        <nav class="nav">
+            <i class="bars fas fa-bars 3x"></i>
 
-    <section class="query">
-
-        <form class="city" action="/" method="POST">
-            <label for="cityInput"><h3>City Name: </h3></label>
-            <input id="cityInput" name="cityName" type="text" placeholder="Paris" autocomplete="off"> <!--the name here is super important-->
-            <button type="submit" class="btn" >Go</button>
-        </form> 
-
-        <div class="description">
-            <p><%= userCity %> </p>
-            <p><%= newDescription %> </p>
-        </div>
-
-        <div class="temperature">
-            <p> <%= newTemperature  %>  </p>
-        </div>
-        
-    </section>
-
-    <footer class="footer">
+            <div class="date-set">
+                <i class="calendar far fa-calendar-alt 3x"></i>
+                <p class="date"> <%= today %> </p>                
+            </div>
             
-    <div class="image">
-        <img src="images/undraw_through_the_park_lxnl.svg" alt="woman walking in the park">
+        </nav>
+        <header class="header">
+            
+            <h1 class="title">How is the<br>Weather Today?</h1>        
+            
+        </header> 
+
+        <section class="query">
+
+            <form class="city" action="/" method="POST">
+                <label for="cityInput"><h2>City: </h2></label>
+                <input id="cityInput" name="cityName" type="text" placeholder="Paris" autocomplete="off"> <!--the name here is super important-->
+                <br>
+                <button type="submit" class="btn" >Go</button>
+            </form> 
+
+            <div class="description">
+                <p><%= userCity %> </p>
+                <p><%= newDescription %> </p>
+            </div>
+
+            <div class="temperature">
+                <p> <%= newTemperature  %>  </p>
+            </div>
+
+            <div class="image">
+                <img src="images/undraw_nature_on_screen_xkli.png" alt="woman walking in the park">
+            </div>
+            
+        </section>
+
+        <footer class="footer">
+                
+            <p>Developed by Ana Carolina Mendes. 2020 </p>
+            
+        </footer>   
+
     </div>
-    <p>Developed by Ana Carolina Mendes. 2020 </p>
-           
-    </footer>   
     
 </body>
 </html>

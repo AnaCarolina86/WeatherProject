@@ -4,6 +4,34 @@
     box-sizing: border-box;
 }
 
+/* Variables */
+
+:root{
+    --ff-primary: 'Cormorant Infant', serif;
+    --ff-secundary: 'Montserrat', sans-serif;
+
+    --clr-light: #DBC7B5;
+    --clr-dark: #6091AB;
+    --clr-accent: #D05146;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,0.15);
+}
+
+@media (min-width: 800px){
+    :root{
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
 /* General Styles */
 
 html{
@@ -11,27 +39,68 @@ html{
 }
 
 body{
-    color: #8D8DAA;     
-    font-size: 1.5rem;
-    text-align: center;    
-    background: linear-gradient(90deg, #8D8DAA, #DFDFE2, #F7F5F2, #F56D91); 
-    font-family: 'Cormorant Infant', serif;
+    color: var(--clr-accent);     
+    font-size: var(--fs-h3);
+    text-align: center;   
+    background-color: var(--clr-light); 
+    
+    font-family: var(--ff-primary);
     margin: 0;
+    padding: 0;
+}
+
+/* -----All Elements Styles----- */
+
+.all-elements{
+    margin: 1rem;
+    padding: 0.1rem 0.5rem;
+    border: dotted 0.2rem var(--clr-light);
+    box-shadow: var(--bs);
+    background-color: #F3EFE9;
+}
+
+/* -----Nav Styles ----- */
+.nav{
+    margin-top: 0;
+}
+
+.bars{
+    position: relative;
+    float: left;  
+    top: 0.3rem;
+}
+
+.date-set{
+    position: relative;
+    float: right;
+    width: min-content;
+}
+
+.calendar{
+    position: relative;
+    top: 1rem;
+} 
+
+.date{
+    position: relative;
+}
+
+/* -----Header Styles----- */
+.header{
+    margin: 2rem;
+    padding-top: 2rem;
 }
 
 h1{
-    color: #F56D91;
+    color: var(--clr-dark);
     text-shadow: 1px 2px 5px #F7F5F2;
-    font-size: 4rem;
+    font-size: var(--fs-h1);
     font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--ff-secundary);
 }
 
-img{
-    width: 20%;
-    margin: 0;    
-    position: relative;
-}
+/* -----Query Styles----- */
+.city{ margin: 3.5rem 1.5rem; }
 
 input, .btn{    
     border-radius: 5px;
@@ -40,36 +109,45 @@ input, .btn{
 }
 
 input{
-    width: 20%;
+    width: 12rem;
     color: hsl(240, 15%, 61%, 0.8) ;
+}
+
+@media screen and (min-width: 600px) {
+    input{
+        width: 30%;
+    }
 }
 
 .btn{
     background-color: hsl(240, 15%, 61%) ;
     border-color: inherit;
     color: #F7F5F2;
-    box-shadow: 2px 2px 5px 2px rgba(197, 197, 197, 0.8),
-        1px 1px 2px 1px hsl(240, 15%, 61%, 0.4);
-
+    box-shadow: var(--bs);
 }
 
 .btn:hover{
-    background-color: rgba(245, 149, 175, 0.5);
+    background-color: var(--clr-dark);
     border-style: none;
     color: #F7F5F2;    
 }
 
-.city{
-    margin: 3.5rem 1.5rem; 
-     
+.btn{
+    position: relative;
+    margin-top: 1rem;
+}
+
+img{
+    width: 40%;
+    margin: 0;    
+    position: relative;
 }
 
 .footer{
-    color: rgba(245, 135, 164, 0.5);
-    font-size: 1.25rem;
-    background: hsl(240, 15%, 61%, 0.3);
+    color: var(--clr-dark);
+    font-size: var(--fs-body);
     position: relative;
     float: bottom;
-    padding: 1%;
+    padding: 0.2%;
     margin: 0;     
 }
