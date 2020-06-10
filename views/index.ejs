@@ -29,31 +29,29 @@
         </nav>
         <header class="header">
             
-            <h1 class="title">How is the<br>Weather Today?</h1>        
+            <h1 class="title">How is the <br> Weather <br> Today?</h1>        
             
         </header> 
 
         <section class="query">
 
             <form class="city" action="/" method="POST">
-                <label for="cityInput"><h2>City: </h2></label>
+                <label class="city-name" for="cityInput">City:</label>
                 <input id="cityInput" name="cityName" type="text" placeholder="Paris" autocomplete="off"> <!--the name here is super important-->
                 <br>
                 <button type="submit" class="btn" >Go</button>
             </form> 
 
-            <div class="description">
-                <p><%= userCity %> </p>
-                <p><%= newDescription %> </p>
-            </div>
-
-            <div class="temperature">
-                <p> <%= newTemperature  %>  </p>
-            </div>
-
-            <div class="image">
-                <img src="images/undraw_nature_on_screen_xkli.png" alt="woman walking in the park">
-            </div>
+            <div class="query-result">
+                <img class="api-image" src="<%= imageAPI %>" alt="weather image">
+                <p class="user-city" ><%= userCity %> </p>
+                <p class="description"><%= newDescription %> </p>
+                <p class="temperature"> <%= newTemperature  %>  </p>
+            </div>                           
+           
+           <div class="image-undraw">
+                <img class="image-bottom" src="images/undraw_nature_on_screen_xkli.png" alt="woman walking in the park">
+            </div> 
             
         </section>
 

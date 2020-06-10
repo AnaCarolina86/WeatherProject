@@ -27,7 +27,7 @@
     :root{
         --fs-h1: 4.5rem;
         --fs-h2: 3.75rem;
-        --fs-h3: 1.5rem;
+        --fs-h3: 2.5rem;
         --fs-body: 1.125rem;
     }
 }
@@ -42,8 +42,7 @@ body{
     color: var(--clr-accent);     
     font-size: var(--fs-h3);
     text-align: center;   
-    background-color: var(--clr-light); 
-    
+    background-color: var(--clr-light);     
     font-family: var(--ff-primary);
     margin: 0;
     padding: 0;
@@ -97,25 +96,37 @@ h1{
     font-size: var(--fs-h1);
     font-weight: 700;
     font-family: var(--ff-secundary);
+    text-align: center;    
 }
 
 /* -----Query Styles----- */
 .city{ margin: 3.5rem 1.5rem; }
 
+.city-name{
+    position: relative;
+    font-size: var(--fs-h2);
+}
+
 input, .btn{    
     border-radius: 5px;
     border-style: none;
-    font-size: 1.2rem;
+    font-size: var(--fs-h3);
 }
 
 input{
     width: 12rem;
     color: hsl(240, 15%, 61%, 0.8) ;
+    box-shadow: var(--bs);
+}
+
+input::placeholder{
+    opacity: 0.6;
 }
 
 @media screen and (min-width: 600px) {
     input{
         width: 30%;
+        height: 3rem;
     }
 }
 
@@ -124,6 +135,8 @@ input{
     border-color: inherit;
     color: #F7F5F2;
     box-shadow: var(--bs);
+    position: relative;
+    margin-top: 1rem;
 }
 
 .btn:hover{
@@ -132,22 +145,58 @@ input{
     color: #F7F5F2;    
 }
 
-.btn{
+/* -----Query Result Styles----- */
+.query-result{
     position: relative;
-    margin-top: 1rem;
+    top: -3rem;
+    width: 30rem;
+    margin: 0 auto 0 auto;
+    
 }
 
-img{
-    width: 40%;
-    margin: 0;    
+.api-image{
     position: relative;
+    border: none;
+    width: 10rem;
+    float: left;
+}
+
+.user-city{
+    margin: 0;
+    float: left;
+}
+
+.temperature{
+    position: relative;
+    margin: 0;
+    bottom: 2rem;
+    float: left;
+}
+
+.description{
+    position: relative;
+    float: left;
+    width: 20rem;
+    bottom: -4rem;   
+    margin: 0;
+    left: -2.5rem;
+}
+
+/* -----Jumbotron Styles----- */
+
+.lead{
+    font-size: var(--fs-h3);
+}
+
+.image-bottom{
+    width: 50%;
 }
 
 .footer{
     color: var(--clr-dark);
     font-size: var(--fs-body);
-    position: relative;
-    float: bottom;
+
     padding: 0.2%;
-    margin: 0;     
+    margin: 0;   
+    width: 100%;  
 }

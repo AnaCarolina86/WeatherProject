@@ -7,6 +7,7 @@ const bodyParser = require("body-parser"); //require the body parser module
 let descriptionWeather = "";
 let newTemp = "";
 let city = "";
+let image = "";
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -27,7 +28,7 @@ app.get("/", function(req, res){
     const day = today.toLocaleDateString("en-US", options);    
 
     res.render('index',{today: day, newDescription: descriptionWeather,
-        newTemperature: newTemp, userCity: city});    
+        newTemperature: newTemp, userCity: city, imageAPI: image});    
 });
 
 app.post("/", function(req, res){
@@ -51,8 +52,9 @@ app.post("/", function(req, res){
                 const imageUrl = "http://openweathermap.org/img/wn/" + icon +"@2x.png";
                 
                 descriptionWeather = description;  
-                newTemp = temp + " degrees Celsius"; 
+                newTemp = temp + " C"; 
                 city = query;
+                image = imageUrl;
 
                 res.redirect("/");
                 
