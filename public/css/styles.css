@@ -55,7 +55,8 @@ body{
     padding: 0.1rem 0.5rem;
     border: dotted 0.2rem var(--clr-light);
     box-shadow: var(--bs);
-    background-color: #F3EFE9;
+    /*background-color: #F3EFE9;*/
+    background-color: #fff;
 }
 
 /* -----Nav Styles ----- */
@@ -148,38 +149,52 @@ input::placeholder{
 /* -----Query Result Styles----- */
 .query-result{
     position: relative;
-    top: -3rem;
-    width: 30rem;
-    margin: 0 auto 0 auto;
-    
+    width: 18em;
+    margin: 3em auto 2em auto;
 }
 
 .api-image{
-    position: relative;
+    grid-area: image;
     border: none;
-    width: 10rem;
-    float: left;
+    width: 10em;
 }
 
-.user-city{
-    margin: 0;
-    float: left;
-}
-
-.temperature{
-    position: relative;
-    margin: 0;
-    bottom: 2rem;
-    float: left;
+.user-city{ 
+    grid-area: city; 
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .description{
-    position: relative;
-    float: left;
-    width: 20rem;
-    bottom: -4rem;   
-    margin: 0;
-    left: -2.5rem;
+    grid-area: description;
+    width: 10em;   
+    text-transform: capitalize;
+}
+
+.temperature{ 
+    grid-area: temp; 
+    margin-top: 0;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+        'image city city city city'
+        'image description description description description'
+        'image temp temp temp temp';    
+    text-align: left;
+}
+
+@media(max-width: 480px){
+    .api-image{
+        width: 6em;
+    }
+    .user-city, .description, .temperature{
+        width: 8em;
+    }
+    .query-result{
+        width: 15em;
+    }
 }
 
 /* -----Jumbotron Styles----- */
@@ -188,14 +203,17 @@ input::placeholder{
     font-size: var(--fs-h3);
 }
 
-.image-bottom{
-    width: 50%;
+/* -----Mobile's Image and Footer Styles----- */
+.image-undraw{
+    position: relative;
+    max-width: 20em;
 }
+
+.image-bottom{ width: 100%; }
 
 .footer{
     color: var(--clr-dark);
     font-size: var(--fs-body);
-
     padding: 0.2%;
     margin: 0;   
     width: 100%;  
